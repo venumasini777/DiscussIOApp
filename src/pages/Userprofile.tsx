@@ -1,7 +1,7 @@
 // src/components/UserProfile.tsx
 import React, { useState, useEffect } from 'react';
 import { User } from '../types';
-import { followUser, unfollowUser, getUserProfile } from '../services/api';
+//import { followUser, unfollowUser, getUserProfile } from '../services/api';
 
 interface UserProfileProps {
   userId: number;
@@ -14,10 +14,10 @@ const UserProfile = ({ userId }: UserProfileProps) => {
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const userData = await getUserProfile(userId);
-        setUser(userData);
+        //const userData = await getUserProfile(userId);
+        //setUser(userData);
         // Assume userData includes a flag indicating whether the current user follows them
-        setIsFollowing(userData.isFollowing);
+        //setIsFollowing(userData.isFollowing);
       } catch (error) {
         console.error('Failed to fetch user profile', error);
       }
@@ -29,9 +29,9 @@ const UserProfile = ({ userId }: UserProfileProps) => {
   const handleFollowToggle = async () => {
     try {
       if (isFollowing) {
-        await unfollowUser(userId);
+        //await unfollowUser(userId);
       } else {
-        await followUser(userId);
+        //await followUser(userId);
       }
       setIsFollowing(!isFollowing);
     } catch (error) {

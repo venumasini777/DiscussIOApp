@@ -5,22 +5,28 @@ export interface User {
     following: number[];
   }
   
-  export interface Discussion {
-    id: number;
-    text: string;
-    image?: string;
-    hashtags: string[];
-    createdOn: string;
-    author: User;
-    likes: number;
-    comments: Comment[];
-  }
+export interface Discussion {
+  id: number;
+  content: string;
+  created_on: string;
+  image: string;
+  user_id: number;
+  hashtags?: string[];
+}
   
-  export interface Comment {
-    id: number;
-    text: string;
-    author: User;
-    likes: number;
-    replies: Comment[];
-  }
-  
+export interface Comment {
+  id: number;
+  text: string;
+  author: User;
+  likes: number;
+  replies: Comment[];
+}
+
+export interface DiscussionResponse {
+  id: number;
+  content: string;
+  created_on: string;
+  image: string;
+  user_id: number;
+  hashtags: string;
+}

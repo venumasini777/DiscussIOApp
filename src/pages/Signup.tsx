@@ -1,6 +1,6 @@
 // Signup.tsx
 import React, { useState } from 'react';
-import { signupUser } from '../services/api';
+
 
 const Signup =  () => {
   const [name, setName] = useState('');
@@ -10,7 +10,7 @@ const Signup =  () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await signupUser(name, email, password);
+      //await signupUser(name, email, password);
       // Redirect to login page or user dashboard
     } catch (error) {
       console.error('Signup failed', error);
